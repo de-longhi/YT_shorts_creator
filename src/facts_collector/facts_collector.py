@@ -8,8 +8,6 @@ DEBUG_FACTS = [
     "Praesent ut urna sodales, pellentesque turpis eget, tempor sem.",
     "Nunc rhoncus nibh non magna vehicula, eget rutrum dui faucibus.",
 ]
-
-
 class scientist:
     def __init__(self, api_url, api_key, header_keyname="X-Api-Key", debug=False):
         self.api_url = api_url
