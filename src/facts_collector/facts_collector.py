@@ -8,6 +8,8 @@ DEBUG_FACTS = [
     "Praesent ut urna sodales, pellentesque turpis eget, tempor sem.",
     "Nunc rhoncus nibh non magna vehicula, eget rutrum dui faucibus.",
 ]
+
+
 class scientist:
     def __init__(self, api_url, api_key, header_keyname="X-Api-Key", debug=False):
         self.api_url = api_url
@@ -26,7 +28,7 @@ class scientist:
 
             response.raise_for_status()
             facts = response.json()
-            return [fact["fact"] for fact in facts]
+            return facts[0]["fact"]
 
         except requests.exceptions.RequestException as e:
             print(f"Error fetching facts: {e}")

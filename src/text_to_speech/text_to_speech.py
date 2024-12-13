@@ -41,12 +41,10 @@ def synthesize_speech(text, out_name, output_format="mp3", voice_id="Joanna"):
             VoiceId=voice_id,
         )
 
-        # Save the audio stream to a file
-        audio_filename = f"{out_name}." + output_format
+        audio_filename = f"{out_name}.{output_format}"
         with open(audio_filename, "wb") as audio_file:
             audio_file.write(response["AudioStream"].read())
 
-        print(f"Audio content written to file: {audio_filename}")
         return audio_filename
 
     except Exception as e:
