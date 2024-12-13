@@ -17,11 +17,13 @@ def main():
             print(fact)
     else:
         print("Failed to fetch facts.")
-        
+
     text = "Hello! This is a test of Amazon Polly's text-to-speech capabilities."
 
     # Synthesize speech
-    audio_file = text_to_speech.synthesize_speech(text, output_format="mp3", voice_id="Joanna")
+    audio_file = text_to_speech.synthesize_speech(
+        text, output_format="mp3", voice_id="Joanna"
+    )
     if audio_file:
         print(f"Audio file generated: {audio_file}")
     else:

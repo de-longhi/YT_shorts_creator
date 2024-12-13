@@ -21,7 +21,8 @@ polly_client = boto3.client(
     region_name=AWS_REGION,
 )
 
-def synthesize_speech(text, output_format="mp3", voice_id="Joanna"):
+
+def synthesize_speech(text, out_name, output_format="mp3", voice_id="Joanna"):
     """
     Convert text to speech using Amazon Polly.
 
@@ -41,7 +42,7 @@ def synthesize_speech(text, output_format="mp3", voice_id="Joanna"):
         )
 
         # Save the audio stream to a file
-        audio_filename = "output." + output_format
+        audio_filename = f"{out_name}." + output_format
         with open(audio_filename, "wb") as audio_file:
             audio_file.write(response["AudioStream"].read())
 
