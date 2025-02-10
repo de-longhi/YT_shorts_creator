@@ -95,8 +95,8 @@ class Youtuber:
         return background
 
     def create_fact_video(self, min_words_per_subtitle=5, max_words_per_subtitle=5):
-        if len(self.subtitles) != 5 or len(self.audio_paths) != 5:
-            raise ValueError("You must provide exactly 5 facts and 5 voiceover paths.")
+        # if len(self.subtitles) != 5 or len(self.audio_paths) != 5:
+        #     raise ValueError("You must provide exactly 5 facts and 5 voiceover paths.")
 
         # Calculate total duration based on the voiceover lengths
         total_duration = sum(self.get_audio_duration(path) for path in self.audio_paths)
